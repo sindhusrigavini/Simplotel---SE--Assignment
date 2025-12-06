@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Layout</title>
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <nav class="nav-inner">
+            <ul class="menu">
+                <li>Home</li>
+                <li>Order</li>
+                <li>Food</li>
+                <li>Restaurant</li>
+                <li>Testimonials</li>
+                <li>Contact Us</li>
+            </ul>
+            <img src="menu-bar.png" class="hamburger" alt="menu">
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>LOREM IPSUM</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                id est vitae dolor rhoncus tristique. Maecenas metus quam,
+                rhoncus euismod lorem in, sollicitudin viverra eros. Donec
+                dictum luctus quam ut tristique. Curabitur nec faucibus purus.
+            </p>
+            <button class="click-button">Click Me</button>
+        </div>
+        <div class="hero-right">
+            <img src="pexels-robin-stickel-70497.jpg" alt="Burger">
+        </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page-two">
+        <div class="left-images">
+            <div class="small-images">
+                <img src="pexels-rachel-claire-6752433.jpg" alt="Food 1">
+                <img src="pexels-eva-bronzini-6141651.jpg" alt="Food 2">
+            </div>
+            <div class="tall-image">
+                <img src="pexels-mister-mister-3434523.jpg" alt="Food 3">
+            </div>
+        </div>
+        <div class="right-box">
+            <p class="small-title">LOREM IPSUM</p>
+            <h1>LOREM IPSUM<br>SET ADEMIR</h1>
+            <div class="click-row">
+                <p>click</p>
+                <img src="icons8-arrow-30.png" alt="Arrow">
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+        const menu = document.querySelector(".menu");
+        const ham = document.querySelector(".hamburger");
+
+        ham.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+
+        // Auto close menu when resizing to desktop
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) menu.classList.remove("active");
+        });
+
+        // Close menu when clicking on menu item
+        document.querySelectorAll('.menu li').forEach(item => {
+            item.addEventListener('click', () => {
+                menu.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>
